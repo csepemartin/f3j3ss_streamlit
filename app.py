@@ -28,18 +28,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 linear_regression = LinearRegression()
 linear_regression.fit(X_train, y_train)
 
-st.markdown(
-    """
-    <style>
-    .reportview-container {
-        background: url("https://github.com/csepemartin/f3j3ss_streamlit/blob/main/ucl.jpg");
-    }
-   </style>
-    """,
-    unsafe_allow_html=True
-)
-
-
 st.title('UCL GOALS PREDICTOR')
 
 st.header('Input Parameters:')
