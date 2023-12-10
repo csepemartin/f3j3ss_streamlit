@@ -31,7 +31,7 @@ linear_regression.fit(X_train, y_train)
 
 st.title('UCL GOALS PREDICTOR')
 
-st.sidebar.header('Input Parameters')
+st.header('Input Parameters:')
 
 position = st.slider('Position', min_value=0.0, max_value=10.0, value=5.0)
 on_target = st.slider('On_target', min_value=0.0, max_value=30.0, value=10.0)
@@ -42,4 +42,4 @@ match_played = st.slider('Match_played', min_value=0.0, max_value=13.0, value=5.
 
 if st.button('Predict'):
     prediction = linear_regression.predict([[position,on_target,off_target,blocked,match_played]])
-    st.text(f'Prediction: {np.round(prediction[0],0)}')
+    st.text(f'Predicted number of goals: {np.round(prediction[0],0)}')
