@@ -33,7 +33,7 @@ st.title('UCL GOALS PREDICTOR')
 
 st.header('Input Parameters:')
 
-position = st.selectbox('Defender','Midfielder','Forward')
+position = st.selectbox('Position',options=('Defender','Midfielder','Forward'))
 on_target = st.slider('On_target', min_value=0, max_value=30, value=10)
 off_target = st.slider('Off_target', min_value=0, max_value=30, value=5)
 blocked = st.slider('Blocked', min_value=0, max_value=30, value=5)
