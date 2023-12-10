@@ -43,7 +43,7 @@ if position == 'Defender':
     position = 1
 elif position == 'Midfielder':
     position = 2
-else : position == 3
+else : position = 3
 
 
 if st.button('Predict'):
