@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 import streamlit as st
+import numpy as np
 
 goals = pd.read_csv('https://github.com/csepemartin/f3j3ss_streamlit/blob/main/Goals.csv?raw=true')
 attempts = pd.read_csv('https://github.com/csepemartin/f3j3ss_streamlit/blob/main/Attempts.csv?raw=true')
@@ -41,4 +42,4 @@ match_played = st.slider('Match_played', min_value=0.0, max_value=13.0, value=5.
 
 if st.button('Predict'):
     prediction = linear_regression.predict([[position,on_target,off_target,blocked,match_played]])
-    st.text(f'Prediction: {prediction[0]}')
+    st.text(f'Prediction: {np.round(prediction[0],0)}')
