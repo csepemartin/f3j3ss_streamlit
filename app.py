@@ -29,14 +29,14 @@ linear_regression.fit(X_train, y_train)
 
 st.sidebar.header('Input Parameters')
 
-position = st.sidebar.slider('Position', min_value=0.0, max_value=10.0, value=5.0)
+position = st.slider('Position', min_value=0.0, max_value=10.0, value=5.0)
 on_target = st.sidebar.slider('On_target', min_value=0.0, max_value=30.0, value=10.0)
 off_target = st.sidebar.slider('Off_target', min_value=0.0, max_value=30.0, value=5.0)
 blocked = st.sidebar.slider('Blocked', min_value=0.0, max_value=30.0, value=5.0)
 match_played = st.sidebar.slider('Match_played', min_value=0.0, max_value=13.0, value=5.0)
 
-st.title('Linear Regression Model Deployment')
+st.title('UCL GOALS PREDICTOR')
 
-if st.sidebar.button('Predict'):
+if st.button('Predict'):
     prediction = linear_regression.predict([[position,on_target,off_target,blocked,match_played]])
-    st.sidebar.text(f'Prediction: {prediction[0]}')
+    st.text(f'Prediction: {prediction[0]}')
