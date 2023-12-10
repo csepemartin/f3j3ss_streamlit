@@ -27,15 +27,17 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 linear_regression = LinearRegression()
 linear_regression.fit(X_train, y_train)
 
+
+st.title('UCL GOALS PREDICTOR')
+
 st.sidebar.header('Input Parameters')
 
 position = st.slider('Position', min_value=0.0, max_value=10.0, value=5.0)
-on_target = st.sidebar.slider('On_target', min_value=0.0, max_value=30.0, value=10.0)
-off_target = st.sidebar.slider('Off_target', min_value=0.0, max_value=30.0, value=5.0)
-blocked = st.sidebar.slider('Blocked', min_value=0.0, max_value=30.0, value=5.0)
-match_played = st.sidebar.slider('Match_played', min_value=0.0, max_value=13.0, value=5.0)
+on_target = st.slider('On_target', min_value=0.0, max_value=30.0, value=10.0)
+off_target = st.slider('Off_target', min_value=0.0, max_value=30.0, value=5.0)
+blocked = st.slider('Blocked', min_value=0.0, max_value=30.0, value=5.0)
+match_played = st.slider('Match_played', min_value=0.0, max_value=13.0, value=5.0)
 
-st.title('UCL GOALS PREDICTOR')
 
 if st.button('Predict'):
     prediction = linear_regression.predict([[position,on_target,off_target,blocked,match_played]])
