@@ -39,6 +39,12 @@ off_target = st.slider('Off_target', min_value=0, max_value=30, value=5)
 blocked = st.slider('Blocked', min_value=0, max_value=30, value=5)
 match_played = st.slider('Match_played', min_value=0, max_value=13, value=5)
 
+if position == 'Defender':
+    position = 1
+elif position == 'Midfielder':
+    position = 2
+else : position == 3
+
 
 if st.button('Predict'):
     prediction = linear_regression.predict([[position,on_target,off_target,blocked,match_played]])
