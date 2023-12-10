@@ -48,4 +48,4 @@ else : position = 3
 
 if st.button('Predict'):
     prediction = linear_regression.predict([[position,on_target,off_target,blocked,match_played]])
-    st.text(f'Predicted number of goals: {np.round(prediction[0],0)}')
+    st.text(f'Predicted number of goals: {int(np.round(prediction[0],0))}')
