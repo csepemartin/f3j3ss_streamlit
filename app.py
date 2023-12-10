@@ -30,7 +30,13 @@ linear_regression.fit(X_train, y_train)
 st.sidebar.header('Input Parameters')
 
 position = st.sidebar.slider('Position', min_value=0.0, max_value=10.0, value=5.0)
-on_target = st.sidebar.slider('On_target', min_value=0.0, max_value=10.0, value=5.0)
-off_target = st.sidebar.slider('Off_target', min_value=0.0, max_value=10.0, value=5.0)
-blocked = st.sidebar.slider('Blocked', min_value=0.0, max_value=10.0, value=5.0)
-match_played = st.sidebar.slider('Match_played', min_value=0.0, max_value=10.0, value=5.0)
+on_target = st.sidebar.slider('On_target', min_value=0.0, max_value=30, value=10)
+off_target = st.sidebar.slider('Off_target', min_value=0.0, max_value=30, value=5.0)
+blocked = st.sidebar.slider('Blocked', min_value=0.0, max_value=30, value=5.0)
+match_played = st.sidebar.slider('Match_played', min_value=0.0, max_value=13, value=5.0)
+
+st.title('Linear Regression Model Deployment')
+
+if st.sidebar.button('Predict'):
+    prediction = linear_regression.predict([[position,on_target,off_target,blocked,match_played]])
+    st.sidebar.text(f'Prediction: {prediction[0]}')
